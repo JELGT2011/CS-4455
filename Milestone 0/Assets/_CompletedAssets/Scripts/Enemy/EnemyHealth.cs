@@ -87,9 +87,10 @@ namespace CompleteProject
             enemyAudio.clip = deathClip;
             enemyAudio.Play ();
 
-			// select a random powerup and instantiate it
-			GameObject powerup = Instantiate(powerups[Random.Range (0, powerups.Length)]) as GameObject;
-			powerup.transform.position += this.transform.position;
+			if (powerups.Length > 0) {
+				GameObject powerup = Instantiate(powerups[Random.Range (0, powerups.Length)]) as GameObject;
+				powerup.transform.position += this.transform.position;
+			}
         }
 
 
