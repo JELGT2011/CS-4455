@@ -10,6 +10,7 @@ namespace CompleteProject
         public int scoreValue = 10;                 // The amount added to the player's score when the enemy dies.
         public AudioClip deathClip;                 // The sound to play when the enemy dies.
 
+		public GameObject[] powerups;
 
         Animator anim;                              // Reference to the animator.
         AudioSource enemyAudio;                     // Reference to the audio source.
@@ -85,6 +86,10 @@ namespace CompleteProject
             // Change the audio clip of the audio source to the death clip and play it (this will stop the hurt clip playing).
             enemyAudio.clip = deathClip;
             enemyAudio.Play ();
+
+			// select a random powerup and instantiate it
+			GameObject powerup = Instantiate(powerups[Random.Range (0, powerups.Length)]) as GameObject;
+			powerup.transform.position += this.transform.position;
         }
 
 

@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: StarMaterial
+  m_Name: PowerupHealthBoostMaterial
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _EMISSIONMAP _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _LIGHTMAPPING_REALTIME
     _UVSEC_UV1
@@ -177,7 +177,7 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: .106586143, g: 3.09051013, b: 0, a: 3.09051037}
+        second: {r: 0, g: 3.09051037, b: .0213136915, a: 3.09051037}
       data:
         first:
           name: _Color

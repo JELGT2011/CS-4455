@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: StarMaterial
+  m_Name: PowerupSpeedBoostMaterial
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _EMISSIONMAP _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _LIGHTMAPPING_REALTIME
     _UVSEC_UV1
@@ -177,11 +177,11 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: .106586143, g: 3.09051013, b: 0, a: 3.09051037}
+        second: {r: .106568456, g: 0, b: 3.09051037, a: 3.09051037}
       data:
         first:
           name: _Color
-        second: {r: .842772365, g: .904411793, b: .744809687, a: 1}
+        second: {r: .74481672, g: .745917439, b: .904414654, a: 1}
       data:
         first:
           name: _SpecColor

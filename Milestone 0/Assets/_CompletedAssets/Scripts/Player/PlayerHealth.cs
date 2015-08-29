@@ -99,7 +99,6 @@ namespace CompleteProject
             playerShooting.enabled = false;
         }
 
-
         public void RestartLevel ()
         {
             // Reload the level that is currently loaded.

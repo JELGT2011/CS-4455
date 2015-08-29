@@ -213,7 +213,6 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -333,6 +332,10 @@ MonoBehaviour:
   sinkSpeed: 2.5
   scoreValue: 50
   deathClip: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
+  powerups:
+  - {fileID: 190466, guid: 80e5df4efd8f44455a27ad84d18c2273, type: 2}
+  - {fileID: 194778, guid: d4d17130d85dd429a89d945adde4cf01, type: 2}
+  - {fileID: 190466, guid: dd8e3a3ff24cf48339034754509ef729, type: 2}
 --- !u!114 &11415352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2614,9 +2617,25 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: powerups.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: powerups.Array.data[0]
+      value: 
+      objectReference: {fileID: 190466, guid: 80e5df4efd8f44455a27ad84d18c2273, type: 2}
+    - target: {fileID: 0}
+      propertyPath: powerups.Array.data[1]
+      value: 
+      objectReference: {fileID: 194778, guid: d4d17130d85dd429a89d945adde4cf01, type: 2}
+    - target: {fileID: 0}
+      propertyPath: powerups.Array.data[2]
+      value: 
+      objectReference: {fileID: 190466, guid: dd8e3a3ff24cf48339034754509ef729, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 153412}
