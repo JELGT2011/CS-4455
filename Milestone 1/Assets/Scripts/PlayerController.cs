@@ -21,12 +21,22 @@ public class PlayerController : MonoBehaviour
         protected set { _controllerGUI = value; }
     }
 
+    [SerializeField]
+    protected GameObject _weapon;
+    public GameObject Weapon
+    {
+        get { return _weapon; }
+        set { _weapon = value; }
+    }
+
     void Start()
     {
         if (!_animator)
         {
             _animator = GetComponentInChildren<Animator>();
         }
+
+
     }
 
     void Update()
@@ -39,6 +49,8 @@ public class PlayerController : MonoBehaviour
 
         float X = ControlInputWrapper.GetAxis(ControlInputWrapper.Axis.LeftStickX);
         float Y = ControlInputWrapper.GetAxis(ControlInputWrapper.Axis.LeftStickY);
+        //float X = 0.5f;
+        //float Y = 0.5f;
         float Speed = Mathf.Min(Mathf.Sqrt((X * X) + (Y * Y)), 1f);
         float Angle = Mathf.Rad2Deg * Mathf.Atan(X / Y);
 
