@@ -8,7 +8,7 @@ AnimatorController:
   m_Name: PlayerAnimatorController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: forward
+  - m_Name: speed
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -50,7 +50,7 @@ AnimatorController:
     m_DefaultWeight: 0
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
 --- !u!114 &11439792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,7 +85,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: forward
+  m_BlendParameter: speed
   m_BlendParameterY: forward
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -193,7 +193,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: forward
+    m_ConditionEvent: speed
     m_EventTreshold: .100000001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110236206}
@@ -217,7 +217,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: forward
+    m_ConditionEvent: speed
     m_EventTreshold: .100000001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110236206}
@@ -241,7 +241,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: forward
+    m_ConditionEvent: speed
     m_EventTreshold: .100000001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110236206}
@@ -265,7 +265,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: forward
+    m_ConditionEvent: speed
     m_EventTreshold: .100000001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110227154}
@@ -275,7 +275,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: .25
   m_TransitionOffset: 0
-  m_ExitTime: .947183132
+  m_ExitTime: .100000001
   m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
@@ -289,7 +289,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: forward
+    m_ConditionEvent: speed
     m_EventTreshold: .100000001
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110236206}

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour
@@ -12,9 +13,14 @@ public class PlayerController : MonoBehaviour
         protected set { _animator = value; }
     }
 
-    public float Forward = 0f;
+    [SerializeField]
+    protected Text _controllerGUI;
+    public Text ControllerGUI
+    {
+        get { return _controllerGUI; }
+        protected set { _controllerGUI = value; }
+    }
 
-    // Use this for initialization
     void Start()
     {
         if (!_animator)
@@ -23,7 +29,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -31,43 +36,43 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.anyKey)
+
+        float X = ControlInputWrapper.GetAxis(ControlInputWrapper.Axis.LeftStickX);
+        float Y = ControlInputWrapper.GetAxis(ControlInputWrapper.Axis.LeftStickY);
+        float Speed = Mathf.Min(Mathf.Sqrt((X * X) + (Y * Y)), 1f);
+        float Angle = Mathf.Rad2Deg * Mathf.Atan(X / Y);
+
+        if (float.IsNaN(Angle))
         {
-            if (Input.GetKey(KeyCode.W))
-            {
-                Forward = 0.5f;
-                if (Input.GetKey(KeyCode.LeftShift))
-                {
-                    Forward = 1f;
-                }
-                
-                _animator.SetFloat("forward", Forward);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                _animator.SetTrigger("jump");
-            }
-
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                _animator.SetTrigger("left_attack");
-            }
-
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                _animator.SetTrigger("center_combo");
-            }
-
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                _animator.SetTrigger("right_attack");
-            }
-
-        } else
-        {
-            Forward = 0f;
-            _animator.SetFloat("forward", Forward);
+            Angle = 0f;
         }
+
+        _controllerGUI.text = "Y: " + X + "\n"
+                    + "X: " + Y + "\n"
+                    + "Speed: " + Speed + "\n"
+                    + "Angle: " + Angle
+                    ;
+
+        _animator.SetFloat("speed", Speed);
+
+        transform.rotation = Quaternion.Euler(0f, Angle, 0f);
+
+        if (ControlInputWrapper.GetButtonDown(ControlInputWrapper.Buttons.A))
+        {
+            _animator.SetTrigger("jump");
+        }
+        else if (ControlInputWrapper.GetButtonDown(ControlInputWrapper.Buttons.X))
+        {
+            _animator.SetTrigger("left_attack");
+        }
+        else if (ControlInputWrapper.GetButtonDown(ControlInputWrapper.Buttons.B))
+        {
+            _animator.SetTrigger("right_attack");
+        }
+        else if (ControlInputWrapper.GetButtonDown(ControlInputWrapper.Buttons.Y))
+        {
+            _animator.SetTrigger("center_combo");
+        }
+
     }
 }
