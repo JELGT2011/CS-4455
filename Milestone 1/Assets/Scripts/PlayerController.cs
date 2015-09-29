@@ -59,6 +59,13 @@ public class PlayerController : MonoBehaviour
             Angle = 0f;
         }
 
+        if (Y < 0f)
+        {
+            Angle += 180f;
+
+        }
+        
+
         _controllerGUI.text = "Y: " + X + "\n"
                     + "X: " + Y + "\n"
                     + "Speed: " + Speed + "\n"

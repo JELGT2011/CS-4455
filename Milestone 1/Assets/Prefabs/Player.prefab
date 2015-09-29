@@ -512,7 +512,7 @@ GameObject:
   - 95: {fileID: 9540700}
   - 136: {fileID: 13650972}
   - 114: {fileID: 11404744}
-  - 54: {fileID: 5420722}
+  - 54: {fileID: 5433220}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5154,7 +5154,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 474362}
   m_RootOrder: 73
---- !u!54 &5420722
+--- !u!54 &5433220
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -5165,7 +5165,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
